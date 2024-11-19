@@ -13,6 +13,15 @@ body, html {
     width: 70px;
 }
 
+.header-tickets{
+    height: 560px;
+    background-image: url("../img/header-entradas.jpg");
+}
+
+.container {
+    z-index: 9999;
+}
+
 .active-nav-item {
     color: #E3B94E;
 }
