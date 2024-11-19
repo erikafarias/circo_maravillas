@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: #08020F;
+    font-family: "Cinzel", serif;
+}
+
+.logo {
+    width: 70px;
+}
+
+.active-nav-item {
+    color: #E3B94E;
+}
+
+footer {
+    background-color: #040404;
+}
+
+footer p, footer ul{
+  font-size: 16px;
+  font-family: "Cardo", serif;
+  color: #4A4A4A;
+}
+
+.img-footer {
+    width: 460px;
+    gap: 0px;
+    opacity: 20%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    justify-items: center;
+    align-items: center;
+}
+
+.info-footer {
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.integrantes-lista {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
+}
+
+@media (max-width: 400px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        padding-bottom: 20px;
+        
+    }
+
+    .info-footer {
+        text-align: center;
+    }
+
+    .logo-footer, .img-footer {
+       display: none;
+    }
+
+}
+
+
