@@ -11,8 +11,9 @@
       theme: {
         extend: {
           colors: {
-            primary: '#8b5cf6',
-            secondary: '#ec4899',
+                bgModal: '#172D69',
+                buttonCart: '#E3B94E', 
+          
           },
         },
       },
@@ -49,9 +50,76 @@
             </ul>
           </div>
         </header>
-      <main class="flex-grow">
-        <!-- Contenido principal -->
-      </main>
+        <main class="flex-grow pt-20">
+          <section class="tickets text-white py-10 px-5">
+            <div class="container mx-auto">
+              <h2 class="text-center text-4xl font-bold mb-8">ENTRADAS</h2>
+              
+              <!-- Selección de Obra -->
+              <div class="mb-32">
+                <div class="grid grid-cols-4">
+                  <h3 class="font-semibold mb-4">Seleccionar obra</h3>
+                  <div class="box relative border-2 border-transparent hover:border-primary cursor-pointer obra" data-title="Fantasy">
+                    <img src="./img/entrada_1.jpg" alt="Fantasy">
+                    <p class="text-center mt-2">FANTASY</p>
+                  </div>
+                  <div class="box relative border-2 border-transparent hover:border-primary cursor-pointer obra" data-title="Fire">
+                    <img src="./img/entrada_2.jpg" alt="Fire" >
+                    <p class="text-center mt-2 font-semibold">FIRE</p>
+                  </div>
+                  <div class="box relative border-2 border-transparent hover:border-primary cursor-pointer obra" data-title="Love Story">
+                    <img src="./img/entrada_3.jpg" alt="Love Story">
+                    <p class="text-center mt-2 font-semibold">LOVE STORY</p>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Selección de Función -->
+              <div class="mb-32">
+                <div class="grid grid-cols-3 gap-4">
+                    <h3 class="font-semibold mb-4">Seleccionar función</h3>
+                    <select id="location" class="text-white p-3 rounded">
+                        <option value="" disabled selected>Seleccione ciudad</option>
+                        <option value="palermo">Palermo</option>
+                        <option value="mar-del-plata">Mar del Plata</option>
+                        <option value="cordoba">Córdoba</option>
+                    </select>
+                    <select id="date-time" class="bg-gray-800 text-white p-3 rounded">
+                        <option value="" disabled selected>Seleccione fecha y hora</option>
+                        <option value="22-12-2024">22/12 19:00</option>
+                        <option value="23-12-2024">23/12 20:00</option>
+                        <option value="24-12-2024">24/12 20:00</option>
+                        <option value="24-11-2024">24/12 (Función distendida) 18:00</option>
+                    </select>
+                </div>
+            </div>
+          
+              <!-- Selección de Ubicación -->
+              <div  class="grid grid-cols-4 gap-4 mb-32">
+                <h3 class="font-semibold mb-4">Seleccionar ubicación</h3>
+                <select id="seat" class="bg-gray-800 text-white p-3 rounded w-full">
+                  <option value="" disabled selected>Seleccione ubicación</option>
+                  <option value="platea-alta">Platea alta</option>
+                  <option value="platea-baja">Platea baja</option>
+                  <option value="reducida">Asientos de movilidad reducida</option>
+                </select>
+                <h3 class="font-semibold mb-4">Seleccionar cantidad</h3>
+                <div class="flex items-center space-x-4">
+                  <button id="decrease" class="bg-gray-800 text-white px-4 py-2 rounded">-</button>
+                  <p id="quantity" class="text-lg">1</p>
+                  <button id="increase" class="bg-gray-800 text-white px-4 py-2 rounded">+</button>
+                </div>
+                <p id="price" class="text-xl font-bold mt-4">$99999</p>
+              </div>
+          
+              <!-- Botones -->
+              <div class="flex justify-center space-x-4">
+                <button id="view-cart" class="btn-carro py-2 px-6 rounded hover:bg-primary font-bold">VER CARRITO</button>
+                <button id="buy-now" class="btn-buy text-white py-2 px-6 rounded hover:bg-primary">COMPRAR</button>
+              </div>
+            </div>
+          </section>
+        </main>
       <footer class="text-white h-60">
         <div class="container mx-auto text-center">
           <div class="grid-container">
@@ -71,6 +139,22 @@
         </div>
       </footer>
     </div>
-    <script src="./js/menu.js"></script>
+  <!-- Modal -->
+<div id="cart-modal" class="hidden fixed inset-0 z-10 w-screen h-screen flex items-center justify-center overflow-y-auto bg-black bg-opacity-80">
+  <div class="bg-bgModal p-8 rounded-lg max-w-md w-full relative text-white">
+    <h2 class="text-2xl font-bold mb-4">Carrito de Compras</h2>
+    <div id="cart-items" class="mb-4 text-black">
+      <!-- Items del carrito -->
+    </div>
+    <div class="flex justify-between items-center">
+      <p id="total-price"> <button id="back-to-cart" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Modificar</button></p>
+      <button id="checkout" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Comprar</button>
+    </div>
+    <button id="close-modal" class="absolute top-2 right-2 bg-buttonCart rounded-full"><img class="w-6" src="https://www.freeiconspng.com/thumbs/close-icon/close-icon-39.png" alt="cerrar modal"></button>
+  </div>
+</div>
+    
+        <script src="./js/menu.js"></script>
+        <script src="./js/cart.js"></script>
 </body>
 </html>

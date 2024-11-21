@@ -26,6 +26,61 @@ body, html {
     color: #E3B94E;
 }
 
+.tickets{
+    font-size: 20px !important;
+}
+
+.tickets img {
+    width: 212px;
+    height: 270px;
+}
+
+.tickets select {
+    background-color: #172D69;
+    border-radius: 10px;
+
+    option {
+        background-color: #ffffff;
+        border-radius: 10px;
+        color: #040404;
+    }
+}
+
+.selected-obra {
+    box-shadow: 0 0 10px 5px white;
+}
+
+.btn-carro {
+    width: 291px;
+    height: 51px;
+    top: 1633px;
+    left: 355px;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #E3B94E;
+    color: #172D69;
+}
+.btn-buy {
+    width: 291px;
+    height: 51px;
+    top: 1633px;
+    left: 355px;
+    gap: 0px;
+    border-radius: 8px;
+    opacity: 0px;
+    background-color: #172D69 ;
+    color: #E3B94E;
+}
+
+.box {
+    width: 212px;
+}
+
+.tickets p {
+    width: 212px;
+}
+
 footer {
     background-color: #040404;
 }
