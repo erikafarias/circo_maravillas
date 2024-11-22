@@ -30,12 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartIcon = document.getElementById('cart-icon');
     const cartCount = document.getElementById('cart-count');
     const obras = document.querySelectorAll('.obra');
+    const locationSelect = document.getElementById('location');
+    const dateTimeSelect = document.getElementById('date-time');
 
     let selectedObra = null;
     let quantity = 1;
     const pricePerItem = 15000;
-    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Cargar desde localStorage
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; 
     let itemToDeleteIndex = null;
+    let funcionesData = null;
 
     function updateQuantityAndPrice() {
         quantityEl.textContent = quantity;
@@ -43,14 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkFormCompletion() {
-        const location = document.getElementById('location').value;
-        const dateTime = document.getElementById('date-time').value;
+        const location = locationSelect.value;
+        const dateTime = dateTimeSelect.value;
         const seat = document.getElementById('seat').value;
 
         if (selectedObra && location && dateTime && seat) {
             addCartBtn.disabled = false;
         } else {
-            addCartBtn.disabled = false; // Asegúrate de que el botón no se deshabilite
+            addCartBtn.disabled = false;
         }
     }
 
@@ -97,11 +100,73 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getRandomTime() {
+        const hours = Math.floor(Math.random() * 24);
+        const minutes = Math.floor(Math.random() * 60);
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+    }
+    
+    function getMonthName(monthIndex) {
+        const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        return monthNames[monthIndex];
+    }
+    
+    function formatFecha(fecha) {
+        console.log(`Formatting fecha: ${fecha}`);
+        const [location, datePart] = fecha.split(' ');
+        if (!datePart) {
+            console.error(`Invalid date format: ${fecha}`);
+            return null;
+        }
+        const [day, month] = datePart.split('/').map(Number);
+        if (isNaN(day) || isNaN(month)) {
+            console.error(`Invalid date format: ${fecha}`);
+            return null;
+        }
+        const monthName = getMonthName(month - 1); 
+        const randomTime = getRandomTime();
+        return `${day} de ${monthName}, ${randomTime}`;
+    }
+    
+function populateLocationAndDateTime() {
+    locationSelect.innerHTML = '<option value="" disabled selected>Seleccione ciudad</option>';
+    dateTimeSelect.innerHTML = '<option value="" disabled selected>Seleccione función</option>';
+
+    if (selectedObra && funcionesData) {
+        const funcion = funcionesData.funciones.find(f => f.nombre === selectedObra);
+        if (funcion) {
+           const locationPlaceholder = locationSelect.querySelector('option[value="adver"]');
+            const dateTimePlaceholder = dateTimeSelect.querySelector('option[value="adver"]');
+            if (locationPlaceholder) locationPlaceholder.remove();
+            if (dateTimePlaceholder) dateTimePlaceholder.remove();
+
+            const uniqueLocations = [...new Set(funcion.fechas.map(fecha => fecha.match(/^[^\d]+/)[0].trim()))];
+            uniqueLocations.forEach(location => {
+                const option = document.createElement('option');
+                option.value = location;
+                option.textContent = location;
+                locationSelect.appendChild(option);
+            });
+
+            funcion.fechas.forEach(fecha => {
+                const formattedFecha = formatFecha(fecha);
+                if (formattedFecha) {
+                    const option = document.createElement('option');
+                    option.value = fecha;
+                    option.textContent = formattedFecha;
+                    dateTimeSelect.appendChild(option);
+                }
+            });
+        }
+    }
+}
+
     obras.forEach(obra => {
         obra.addEventListener('click', () => {
             obras.forEach(o => o.classList.remove('border-primary', 'selected-obra'));
             obra.classList.add('border-primary', 'selected-obra');
             selectedObra = obra.dataset.title;
+            populateLocationAndDateTime();
             checkFormCompletion();
         });
     });
@@ -118,13 +183,13 @@ document.addEventListener('DOMContentLoaded', () => {
         updateQuantityAndPrice();
     });
 
-    document.getElementById('location').addEventListener('change', checkFormCompletion);
-    document.getElementById('date-time').addEventListener('change', checkFormCompletion);
+    locationSelect.addEventListener('change', checkFormCompletion);
+    dateTimeSelect.addEventListener('change', checkFormCompletion);
     document.getElementById('seat').addEventListener('change', checkFormCompletion);
 
     addCartBtn.addEventListener('click', () => {
-        const location = document.getElementById('location').value;
-        const dateTime = document.getElementById('date-time').value;
+        const location = locationSelect.value;
+        const dateTime = dateTimeSelect.value;
         const seat = document.getElementById('seat').value;
 
         if (!selectedObra) {
@@ -158,11 +223,11 @@ document.addEventListener('DOMContentLoaded', () => {
         showAlert('Item agregado al carrito.', './animation/addCart.json');
         viewCartBtn.disabled = false;
 
-        // Resetear los ítems seleccionados
+
         selectedObra = null;
         quantity = 1;
-        document.getElementById('location').value = '';
-        document.getElementById('date-time').value = '';
+        locationSelect.value = '';
+        dateTimeSelect.value = '';
         document.getElementById('seat').value = '';
         obras.forEach(o => o.classList.remove('border-primary', 'selected-obra'));
         updateQuantityAndPrice();
@@ -230,8 +295,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     buyNowBtn.addEventListener('click', () => {
-        const location = document.getElementById('location').value;
-        const dateTime = document.getElementById('date-time').value;
+        const location = locationSelect.value;
+        const dateTime = dateTimeSelect.value;
         const seat = document.getElementById('seat').value;
 
         if (!selectedObra) {
@@ -304,5 +369,13 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmModal.classList.add('hidden');
         });
     });
+
+    fetch('funciones.json')
+        .then(response => response.json())
+        .then(data => {
+            funcionesData = data;
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+
     updateCartCount();
 });
