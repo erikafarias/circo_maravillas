@@ -26,12 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteAnimationEl = document.getElementById('delete-animation');
     const addCartAnimationEl = document.getElementById('add-cart-animation');
     const purchaseModalTitle = document.getElementById('purchase-modal-title');
+    const cartIcon = document.getElementById('cart-icon');
+    const cartCount = document.getElementById('cart-count');
     const obras = document.querySelectorAll('.obra');
 
     let selectedObra = null;
     let quantity = 1;
     const pricePerItem = 15000;
-    let cartItems = [];
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Cargar desde localStorage
     let itemToDeleteIndex = null;
 
     function updateQuantityAndPrice() {
@@ -47,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedObra && location && dateTime && seat) {
             addCartBtn.disabled = false;
         } else {
-            addCartBtn.disabled = false; 
+            addCartBtn.disabled = false; // Asegúrate de que el botón no se deshabilite
         }
     }
 
@@ -76,10 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function removeCartItem(index) {
         cartItems.splice(index, 1);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
+        updateCartCount();
         if (cartItems.length === 0) {
             cartModal.classList.add('hidden');
         } else {
             viewCartBtn.click(); 
+        }
+    }
+
+    function updateCartCount() {
+        cartCount.textContent = cartItems.length;
+        if (cartItems.length > 0) {
+            cartIcon.classList.remove('hidden');
+        } else {
+            cartIcon.classList.add('hidden');
         }
     }
 
@@ -140,9 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         cartItems.push(cartItem);
+        localStorage.setItem('cartItems', JSON.stringify(cartItems)); 
         showAlert('Item agregado al carrito.', './animation/addCart.json');
         viewCartBtn.disabled = false;
 
+        // Resetear los ítems seleccionados
         selectedObra = null;
         quantity = 1;
         document.getElementById('location').value = '';
@@ -150,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('seat').value = '';
         obras.forEach(o => o.classList.remove('border-primary', 'selected-obra'));
         updateQuantityAndPrice();
+        updateCartCount();
     });
 
     viewCartBtn.addEventListener('click', () => {
@@ -159,24 +175,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         cartItemsEl.innerHTML = cartItems.map((item, index) => `
-            <div class="flex flex-col space-y-4 p-4 bg-gray-100 rounded-lg">
-                <div class="flex justify-between">
+            <div class="flex flex-col space-y-4 p-4 bg-gray-100 rounded-lg mb-4">
+                <div class="flex justify-between h-2">
                     <span class="font-bold">Obra:</span>
                     <span>${item.obra}</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between h-2">
                     <span class="font-bold">Cantidad:</span>
                     <span>${item.quantity}</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between h-2">
                     <span class="font-bold">Ubicación:</span>
                     <span>${item.seat}</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between h-2">
                     <span class="font-bold">Fecha y Hora:</span>
                     <span>${item.dateTime}</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between h-2">
                     <span class="font-bold">Precio:</span>
                     <span>$${item.price}</span>
                 </div>
@@ -286,4 +302,5 @@ document.addEventListener('DOMContentLoaded', () => {
             confirmModal.classList.add('hidden');
         });
     });
+    updateCartCount();
 });

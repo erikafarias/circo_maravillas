@@ -217,6 +217,21 @@ h2 {
     width: 212px;
 }
 
+#cart-icon {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #E3B94E;
+    color: #172D69;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 footer {
   background-color: #040404;
 }

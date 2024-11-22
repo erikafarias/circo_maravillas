@@ -177,6 +177,7 @@
 <div id="purchase-modal" class="hidden fixed inset-0 z-10 w-screen h-screen flex items-center justify-center overflow-y-auto bg-black bg-opacity-80">
   <div class="bg-bgModal p-8 rounded-lg max-w-md w-full relative text-white">
     <h2 id="purchase-modal-title" class="text-2xl font-bold mb-4">Método de Pago</h2>
+    <img src="https://www.casarafael.org.ar/wp-content/uploads/2012/08/tarjetascredito.png" alt="">
     <form id="purchase-form">
       <div class="mb-4">
         <label for="email" class="block text-sm font-bold mb-2">Correo Electrónico:</label>
@@ -224,6 +225,13 @@
     <div id="delete-animation" class="hidden w-full h-64 mt-4"></div>
   </div>
 </div>
+<div id="cart-icon" class="fixed bottom-4 right-4 bg-buttonCart text-bgModal p-4 rounded-full shadow-lg flex items-center justify-center cursor-pointer">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m5-9l2 9"></path>
+  </svg>
+  <span id="cart-count" class="ml-2 text-lg font-bold">0</span>
+</div>
+
     
         <script src="./js/menu.js"></script>
         <script src="./js/cart.js"></script>
