@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteAnimationEl = document.getElementById('delete-animation');
     const addCartAnimationEl = document.getElementById('add-cart-animation');
     const purchaseModalTitle = document.getElementById('purchase-modal-title');
+    const cardImage = document.getElementById('card-image');
     const cartIcon = document.getElementById('cart-icon');
     const cartCount = document.getElementById('cart-count');
     const obras = document.querySelectorAll('.obra');
@@ -265,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         purchaseForm.classList.add('hidden');
         purchaseModalTitle.textContent = 'Compra Realizada';
+        cardImage.classList.add('hidden');
         successAnimationEl.innerHTML = '';
         successAnimationEl.classList.remove('hidden');
         lottie.loadAnimation({
