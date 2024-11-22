@@ -1,76 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circo Maravillas</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#8b5cf6',
-            secondary: '#ec4899',
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circo Maravillas</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b5cf6",
+              secondary: "#ec4899",
+            },
           },
         },
-      },
-    };
-  </script>
-</head>
-<body>
+      };
+    </script>
+  </head>
+  <body>
     <div class="max-w-screen-xl mx-auto flex flex-col min-h-screen">
       <header class="text-white">
-        <div class="container mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900">
-          <a href="./index.html" class="text-xl font-bold"> <img class="logo" src="./img/Maravilla_Cinzel_Translicent.png" alt="logo circo maravillas"></a>
+        <div
+          class="container mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900"
+        >
+          <a href="./index.html" class="text-xl font-bold">
+            <img
+              class="logo"
+              src="./img/Maravilla_Cinzel_Translicent.png"
+              alt="logo circo maravillas"
+          /></a>
           <nav>
-              <ul class="hidden md:flex space-x-16 mx-14">
-                <li><a href="./index.html" class="nav-item hover:underline">INICIO</a></li>
-                <li><a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a></li>
-                <li><a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a></li>
-                <li><a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a></li>
-                <li><a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a></li>
-              </ul>
-              <button id="menu-btn" class="block md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-            </nav>
-          </div>
-          <div id="menu" class="hidden md:hidden">
-            <ul class="flex flex-col space-y-4 p-4">
-              <li><a href="./index.html" class="nav-item hover:underline">INICIO</a></li>
-              <li><a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a></li>
-              <li><a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a></li>
-              <li><a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a></li>
-              <li><a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a></li>
+            <ul class="hidden md:flex space-x-16 mx-14">
+              <li>
+                <a href="./index.html" class="nav-item hover:underline"
+                  >INICIO</a
+                >
+              </li>
+              <li>
+                <a href="./espectaculos.html" class="nav-item hover:underline"
+                  >ESPECTÁCULOS</a
+                >
+              </li>
+              <li>
+                <a href="./funciones.html" class="nav-item hover:underline"
+                  >FUNCIONES</a
+                >
+              </li>
+              <li>
+                <a href="./entradas.html" class="nav-item hover:underline"
+                  >ENTRADAS</a
+                >
+              </li>
+              <li>
+                <a href="./nosotros.html" class="nav-item hover:underline"
+                  >NOSOTROS</a
+                >
+              </li>
             </ul>
-          </div>
-        </header>
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </nav>
+        </div>
+        <div id="menu" class="hidden md:hidden">
+          <ul class="flex flex-col space-y-4 p-4">
+            <li>
+              <a href="./index.html" class="nav-item hover:underline">INICIO</a>
+            </li>
+            <li>
+              <a href="./espectaculos.html" class="nav-item hover:underline"
+                >ESPECTÁCULOS</a
+              >
+            </li>
+            <li>
+              <a href="./funciones.html" class="nav-item hover:underline"
+                >FUNCIONES</a
+              >
+            </li>
+            <li>
+              <a href="./entradas.html" class="nav-item hover:underline"
+                >ENTRADAS</a
+              >
+            </li>
+            <li>
+              <a href="./nosotros.html" class="nav-item hover:underline"
+                >NOSOTROS</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
       <main class="flex-grow">
-        <!-- Contenido principal -->
+        <h2 class="text-center text-4xl font-bold mb-8">
+          Localidades y Funciones
+        </h2>
+        <div class="" id="funciones">
+          <div class="funcion funcion-fantasy">
+            <h4></h4>
+            <div class="funcion-fechas"></div>
+            <div class="funciones-distendidas"></div>
+            <div class="funciones-mensaje"></div>
+          </div>
+          <div class="funcion funcion-fire">
+            <h4></h4>
+            <div class="funcion-fechas"></div>
+            <div class="funciones-distendidas"></div>
+            <div class="funciones-mensaje"></div>
+          </div>
+          <div class="funcion funcion-love-story">
+            <h4></h4>
+            <div class="funcion-fechas"></div>
+            <div class="funciones-distendidas"></div>
+            <div class="funciones-mensaje"></div>
+          </div>
+        </div>
+        <div class="contenedor-button">
+          <button class="button-entradas">
+            <a href="./entradas.html">Conseguí tus entradas</a>
+          </button>
+        </div>
+        <div class="como-llegar">
+          <div class="mapa">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3285.7370213798326!2d-58.42876352350519!3d-34.560213255203244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5a57fefe1ad%3A0xadc229f0dd3725c7!2sGEBA!5e0!3m2!1ses-419!2sar!4v1732240224882!5m2!1ses-419!2sar"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="direcciones">
+            <h2>Cómo llegar</h2>
+            <button class="direccion activa" ubicacion="Palermo">
+              Palermo. GEBA, Av. Pres. Figueroa Alcorta 5575, C1426 Cdad.
+              Autónoma de Buenos Aires
+            </button>
+            <button class="direccion" ubicacion="Mar del Plata">
+              Av. de los Trabajadores 6230, B7600 Mar del Plata, Provincia de
+              Buenos Aires
+            </button>
+            <button class="direccion" ubicacion="Cordoba">
+              Hipódromo Córdoba, Bv Elias Yofre 900, X5014 Córdoba
+            </button>
+          </div>
+        </div>
       </main>
       <footer class="text-white h-60">
         <div class="container mx-auto text-center">
           <div class="grid-container">
             <a href="./index.html" class="text-xl font-bold">
-                <img class="logo-footer w-28 ml-20 mt-10" src="./img/Maravilla_Cinzel_Translicent.png" alt="logo circo maravillas">
+              <img
+                class="logo-footer w-28 ml-20 mt-10"
+                src="./img/Maravilla_Cinzel_Translicent.png"
+                alt="logo circo maravillas"
+              />
             </a>
-            <p class="info-footer">Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939. Grupo 4 <img class="w-20" src="./img/uadelogo.png" alt="logo uade"></p>
+            <p class="info-footer">
+              Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939.
+              Grupo 4
+              <img class="w-20" src="./img/uadelogo.png" alt="logo uade" />
+            </p>
             <ul class="integrantes-lista">
-                <li><p>Integrantes:</p></li>
-                <li>Farias Erika Aldana</li>
-                <li>Palavecino Leonel Emiliano</li>
-                <li>Pereyra Damián Ezequiel</li>
-                <li>Saldaña Cecilia Irene</li>
+              <li><p>Integrantes:</p></li>
+              <li>Farias Erika Aldana</li>
+              <li>Palavecino Leonel Emiliano</li>
+              <li>Pereyra Damián Ezequiel</li>
+              <li>Saldaña Cecilia Irene</li>
             </ul>
-            <img class="img-footer" src="./img/footer-img.jpg" alt="footer imagen circo maravillas">
-        </div>
+            <img
+              class="img-footer"
+              src="./img/footer-img.jpg"
+              alt="footer imagen circo maravillas"
+            />
+          </div>
         </div>
       </footer>
     </div>
     <script src="./js/menu.js"></script>
-</body>
+    <script src="./js/funciones.js"></script>
+  </body>
 </html>

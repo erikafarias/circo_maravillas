@@ -1,16 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&display=swap");
 
-body, html {
-    height: 100%;
-    margin: 0;
-    background-color: #08020F;
-    font-family: "Cinzel", serif;
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-color: #08020f;
+  font-family: "Cinzel", serif;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Cinzel Decorative", "Cinzel", serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+p {
+  font-family: "Cardo", serif;
+}
+
+.contenedor-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-entradas {
+  border-radius: 8px;
+  background: #e3b94e;
+  box-shadow: 2px 4px 4px 0px rgba(227, 185, 78, 0.25);
+  width: 300px;
+  height: 50px;
+}
+
+.button-entradas a {
+  color: #172d69;
+  font-weight: bold;
+}
+
+.button-entradas a:hover {
+  color: #b02427;
 }
 
 .logo {
-    width: 70px;
+  width: 70px;
 }
 
 .header-tickets{
@@ -22,65 +61,156 @@ body, html {
 }
 
 .container {
-    z-index: 9999;
+  z-index: 9999;
 }
 
 .custom-width {
 }
 
 .active-nav-item {
-    color: #E3B94E;
+  color: #e3b94e;
 }
 
-.tickets{
-    font-size: 20px !important;
+#funciones {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#funciones .funcion {
+  width: 350px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.funcion div p {
+  text-align: center;
+}
+
+.funcion h4 {
+  font-size: 30px;
+}
+
+.funcion-fantasy {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_1.jpg") center / cover no-repeat;
+}
+
+.funcion-fire {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_2.jpg") center / cover no-repeat;
+}
+
+.funcion-love-story {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_3.jpg") center / cover no-repeat;
+}
+
+.como-llegar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: rgba(23, 45, 105, 0.16);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 35px auto;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #b02427;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.direcciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.direccion {
+  background-color: #172d69;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Cardo", serif;
+}
+
+.direccion.activa {
+  background-color: #b02427;
+}
+
+.tickets {
+  font-size: 20px !important;
 }
 
 .tickets img {
-    width: 212px;
-    height: 270px;
+  width: 212px;
+  height: 270px;
 }
 
 .tickets select {
-    background-color: #172D69;
-    border-radius: 10px;
+  background-color: #172d69;
+  border-radius: 10px;
 
-    option {
-        background-color: #ffffff;
-        border-radius: 10px;
-        color: #040404;
-    }
+  option {
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #040404;
+  }
 }
 
 .selected-obra {
-    box-shadow: 0 0 10px 5px white;
+  box-shadow: 0 0 10px 5px white;
 }
 
 .btn-carro {
-    width: 291px;
-    height: 51px;
-    top: 1633px;
-    left: 355px;
-    gap: 0px;
-    border-radius: 8px;
-    opacity: 0px;
-    background-color: #E3B94E;
-    color: #172D69;
+  width: 291px;
+  height: 51px;
+  top: 1633px;
+  left: 355px;
+  gap: 0px;
+  border-radius: 8px;
+  opacity: 0px;
+  background-color: #e3b94e;
+  color: #172d69;
 }
 .btn-buy {
-    width: 291px;
-    height: 51px;
-    top: 1633px;
-    left: 355px;
-    gap: 0px;
-    border-radius: 8px;
-    opacity: 0px;
-    background-color: #172D69 ;
-    color: #E3B94E;
+  width: 291px;
+  height: 51px;
+  top: 1633px;
+  left: 355px;
+  gap: 0px;
+  border-radius: 8px;
+  opacity: 0px;
+  background-color: #172d69;
+  color: #e3b94e;
 }
 
 .box {
-    width: 212px;
+  width: 212px;
 }
 
 .count-num {
@@ -88,58 +218,68 @@ body, html {
 }
 
 footer {
-    background-color: #040404;
+  background-color: #040404;
 }
 
-footer p, footer ul{
+footer p,
+footer ul {
   font-size: 16px;
   font-family: "Cardo", serif;
-  color: #4A4A4A;
+  color: #4a4a4a;
 }
 
 .img-footer {
-    width: 460px;
-    gap: 0px;
-    opacity: 20%;
+  width: 460px;
+  gap: 0px;
+  opacity: 20%;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; 
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
 .info-footer {
-    display: flex;
-    width: 75%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .integrantes-lista {
-    list-style-type: none; 
-    padding: 0; 
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 @media (max-width: 400px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-        padding-bottom: 20px;
-        
-    }
+  .grid-container {
+    grid-template-columns: 1fr;
+    padding-bottom: 20px;
+  }
 
-    .info-footer {
-        text-align: center;
-    }
+  .info-footer {
+    text-align: center;
+  }
 
-    .logo-footer, .img-footer {
-       display: none;
-    }
+  .logo-footer,
+  .img-footer {
+    display: none;
+  }
 
+  .como-llegar {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
+  }
 }
-
-
