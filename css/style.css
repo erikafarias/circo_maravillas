@@ -17,10 +17,35 @@ h3,
 h4 {
   font-family: "Cinzel Decorative", "Cinzel", serif;
   font-weight: bold;
+  text-align: center;
 }
 
 p {
   font-family: "Cardo", serif;
+}
+
+.contenedor-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.button-entradas {
+  border-radius: 8px;
+  background: #e3b94e;
+  box-shadow: 2px 4px 4px 0px rgba(227, 185, 78, 0.25);
+  width: 300px;
+  height: 50px;
+}
+
+.button-entradas a {
+  color: #172d69;
+  font-weight: bold;
+}
+
+.button-entradas a:hover {
+  color: #b02427;
 }
 
 .logo {
@@ -38,6 +63,97 @@ p {
 
 .active-nav-item {
   color: #e3b94e;
+}
+
+#funciones {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#funciones .funcion {
+  width: 350px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.funcion div p {
+  text-align: center;
+}
+
+.funcion h4 {
+  font-size: 30px;
+}
+
+.funcion-fantasy {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_1.jpg") center / cover no-repeat;
+}
+
+.funcion-fire {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_2.jpg") center / cover no-repeat;
+}
+
+.funcion-love-story {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    /* Capa transparente */ url("../img/entrada_3.jpg") center / cover no-repeat;
+}
+
+.como-llegar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background: rgba(23, 45, 105, 0.16);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 35px auto;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #b02427;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.direcciones {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.direccion {
+  background-color: #172d69;
+  border: none;
+  padding: 10px 20px;
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Cardo", serif;
+}
+
+.direccion.activa {
+  background-color: #b02427;
 }
 
 .tickets {
@@ -147,5 +263,17 @@ footer ul {
   .logo-footer,
   .img-footer {
     display: none;
+  }
+
+  .como-llegar {
+    grid-template-columns: 1fr;
+  }
+
+  .mapa {
+    width: 100%;
+  }
+
+  iframe {
+    width: 100%;
   }
 }
