@@ -11,9 +11,14 @@
       theme: {
         extend: {
           colors: {
-                bgModal: '#172D69',
-                buttonCart: '#E3B94E', 
-          
+            bgModal: '#172D69',
+            buttonCart: '#E3B94E', 
+            bgAdd: '#D9D9D9',
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            'cinzel-decorative': ['Cinzel Decorative', 'serif'],
+            cardo: ['Cardo', 'serif'],
           },
         },
       },
@@ -21,7 +26,7 @@
   </script>
 </head>
 <body>
-    <div class="max-w-screen-xl mx-auto flex flex-col min-h-screen">
+    <div class="max-w-screen-xxl flex flex-col min-h-screen">
       <header class="header-tickets text-white">
           <div class="container mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900">
             <a href="./index.html" class="text-xl font-bold"> <img class="logo" src="./img/Maravilla_Cinzel_Translicent.png" alt="logo circo maravillas"></a>
@@ -53,10 +58,10 @@
         <main class="flex-grow pt-20">
           <section class="tickets text-white py-10 px-5">
             <div class="container mx-auto">
-              <h2 class="text-center text-4xl font-bold mb-8">ENTRADAS</h2>
+              <h2 class="text-center text-4xl font-bold mb-20">ENTRADAS</h2>
               
               <!-- Selección de Obra -->
-              <div class="mb-32">
+              <div class="mb-24 font-cardo">
                 <div class="grid grid-cols-4">
                   <h3 class="font-semibold mb-4">Seleccionar obra</h3>
                   <div class="box relative border-2 border-transparent hover:border-primary cursor-pointer obra" data-title="Fantasy">
@@ -74,42 +79,53 @@
                 </div>
               </div>
           
-              <!-- Selección de Función -->
-              <div class="mb-32">
-                <div class="grid grid-cols-3 gap-4">
-                    <h3 class="font-semibold mb-4">Seleccionar función</h3>
-                    <select id="location" class="text-white p-3 rounded">
+      <!-- Selección de Función -->
+              <div class="mb-80">
+                <div class="grid grid-cols-4 gap-4 w-full">
+                    <h3 class="font-semibold mb-4 font-cardo">Seleccionar función</h3>
+                    <select id="location" class="text-white p-3 rounded w-full">
                         <option value="" disabled selected>Seleccione ciudad</option>
                         <option value="palermo">Palermo</option>
                         <option value="mar-del-plata">Mar del Plata</option>
                         <option value="cordoba">Córdoba</option>
                     </select>
-                    <select id="date-time" class="bg-gray-800 text-white p-3 rounded">
-                        <option value="" disabled selected>Seleccione fecha y hora</option>
+                    <select id="date-time" class="bg-gray-800 text-white p-3 rounded w-full">
+                        <option value="" disabled selected>Seleccione función</option>
                         <option value="22-12-2024">22/12 19:00</option>
                         <option value="23-12-2024">23/12 20:00</option>
                         <option value="24-12-2024">24/12 20:00</option>
                         <option value="24-11-2024">24/12 (Función distendida) 18:00</option>
                     </select>
                 </div>
-            </div>
+              </div>
           
               <!-- Selección de Ubicación -->
               <div  class="grid grid-cols-4 gap-4 mb-32">
-                <h3 class="font-semibold mb-4">Seleccionar ubicación</h3>
+                <h3 class="font-semibold mb-4 font-cardo">Seleccionar ubicación<p id="" class="text-sm font-bold mt-4 ">(Sin numeración, por orden de llegada)</p></h3>
                 <select id="seat" class="bg-gray-800 text-white p-3 rounded w-full">
                   <option value="" disabled selected>Seleccione ubicación</option>
                   <option value="platea-alta">Platea alta</option>
                   <option value="platea-baja">Platea baja</option>
                   <option value="reducida">Asientos de movilidad reducida</option>
                 </select>
-                <h3 class="font-semibold mb-4">Seleccionar cantidad</h3>
-                <div class="flex items-center space-x-4">
-                  <button id="decrease" class="bg-gray-800 text-white px-4 py-2 rounded">-</button>
-                  <p id="quantity" class="text-lg">1</p>
-                  <button id="increase" class="bg-gray-800 text-white px-4 py-2 rounded">+</button>
+                <h3 class="font-semibold mb-4 font-cardo text-center">Seleccionar cantidad <p class="text-buttonCart text-center">15 disponibles</p></h3>
+                <div class="flex items-center bg-bgAdd h-12 rounded-lg w-64 text-4xl">
+                  <button id="decrease" class="text-black px-4 py-2 rounded font-bold">-</button>
+                  <p id="quantity" class="count-num text-xl text-black text-center font-bold">1</p>
+                  <button id="increase" class="text-black px-4 py-2 rounded">+</button>
                 </div>
-                <p id="price" class="text-xl font-bold mt-4">$99999</p>
+                <p></p>
+                <p></p>
+                <p id="price" class="text-xl font-bold mt-4 text-center">$15000</p>
+                <button id="add-cart" class="btn-carro py-2 px-6 rounded hover:bg-primary font-bold w-64">Agregar</button>
+              </div>
+
+              <div  class="grid grid-cols-4 gap-4 mb-32">
+                <h3 class="font-semibold mb-4"></h3>
+                <p></p>
+                <h3 class="font-semibold mb-4"> </h3>
+                <div class="flex items-center space-x-4">
+                </div>
               </div>
           
               <!-- Botones -->
@@ -117,6 +133,9 @@
                 <button id="view-cart" class="btn-carro py-2 px-6 rounded hover:bg-primary font-bold">VER CARRITO</button>
                 <button id="buy-now" class="btn-buy text-white py-2 px-6 rounded hover:bg-primary">COMPRAR</button>
               </div>
+              <div class="flex justify-center items-center mb-32">
+                <p class="text-sm font-bold mt-4 custom-width">Más información sobre métodos de pago seguros</p>
+            </div>
             </div>
           </section>
         </main>
@@ -147,14 +166,67 @@
       <!-- Items del carrito -->
     </div>
     <div class="flex justify-between items-center">
-      <p id="total-price"> <button id="back-to-cart" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Modificar</button></p>
+      <p id="total-price"> <button id="back-to-cart" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Volver</button></p>
       <button id="checkout" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Comprar</button>
     </div>
     <button id="close-modal" class="absolute top-2 right-2 bg-buttonCart rounded-full"><img class="w-6" src="https://www.freeiconspng.com/thumbs/close-icon/close-icon-39.png" alt="cerrar modal"></button>
   </div>
 </div>
+
+<!-- Modal de Compra -->
+<div id="purchase-modal" class="hidden fixed inset-0 z-10 w-screen h-screen flex items-center justify-center overflow-y-auto bg-black bg-opacity-80">
+  <div class="bg-bgModal p-8 rounded-lg max-w-md w-full relative text-white">
+    <h2 id="purchase-modal-title" class="text-2xl font-bold mb-4">Método de Pago</h2>
+    <form id="purchase-form">
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-bold mb-2">Correo Electrónico:</label>
+        <input type="email" id="email" class="w-full p-2 rounded bg-gray-800 text-white" required>
+      </div>
+      <div class="mb-4">
+        <label for="card-number" class="block text-sm font-bold mb-2">Número de Tarjeta:</label>
+        <input type="text" id="card-number" class="w-full p-2 rounded bg-gray-800 text-white" required>
+      </div>
+      <div class="mb-4">
+        <label for="expiry-date" class="block text-sm font-bold mb-2">Fecha de Expiración:</label>
+        <input type="date" id="expiry-date" class="w-full p-2 rounded bg-gray-800 text-white" required>
+      </div>
+      <div class="mb-4">
+        <label for="cvv" class="block text-sm font-bold mb-2">CVV:</label>
+        <input type="text" id="cvv" class="w-full p-2 rounded bg-gray-800 text-white" required>
+      </div>
+      <div class="flex justify-between items-center">
+        <button type="button" id="cancel-purchase" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Cancelar</button>
+        <button type="submit" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">OK</button>
+      </div>
+    </form>
+    <button id="close-purchase-modal" class="absolute top-2 right-2 bg-buttonCart rounded-full"><img class="w-6" src="https://www.freeiconspng.com/thumbs/close-icon/close-icon-39.png" alt="cerrar modal"></button>
+    <div id="success-animation" class="hidden w-full h-64"></div>
+  </div>
+</div>
+
+<div id="alert-modal" class="hidden fixed inset-0 z-10 w-screen h-screen flex items-center justify-center overflow-y-auto bg-black bg-opacity-80">
+  <div class="bg-bgModal p-8 rounded-lg max-w-md w-full relative text-white">
+    <h2 class="text-2xl font-bold mb-4">Alerta</h2>
+    <p id="alert-message" class="mb-4"></p>
+    <button id="close-alert-modal" class="bg-buttonCart text-bgModal py-2 px-4 rounded font-bold">Cerrar</button>
+    <div id="add-cart-animation" class="hidden w-full h-64 mt-4"></div>
+  </div>
+</div>
+
+<div id="confirm-modal" class="hidden fixed inset-0 z-10 w-screen h-screen flex items-center justify-center overflow-y-auto bg-black bg-opacity-80">
+  <div class="bg-bgModal p-8 rounded-lg max-w-md w-full relative text-white">
+    <h2 class="text-2xl font-bold mb-4">Confirmación</h2>
+    <p id="confirm-message" class="mb-4">¿Estás seguro de que deseas eliminar este ítem?</p>
+    <div class="flex justify-between">
+      <button id="confirm-cancel" class="bg-gray-500 text-white py-2 px-4 rounded font-bold">Cancelar</button>
+      <button id="confirm-delete" class="bg-red-500 text-white py-2 px-4 rounded font-bold">Eliminar</button>
+    </div>
+    <div id="delete-animation" class="hidden w-full h-64 mt-4"></div>
+  </div>
+</div>
     
         <script src="./js/menu.js"></script>
         <script src="./js/cart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 </body>
 </html>

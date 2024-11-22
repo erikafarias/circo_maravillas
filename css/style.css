@@ -52,13 +52,19 @@ p {
   width: 70px;
 }
 
-.header-tickets {
-  height: 560px;
-  background-image: url("../img/header-entradas.jpg");
+.header-tickets{
+    height: 560px;
+    background-image: url("../img/header-entradas.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: -50px;
 }
 
 .container {
   z-index: 9999;
+}
+
+.custom-width {
 }
 
 .active-nav-item {
@@ -207,8 +213,8 @@ h2 {
   width: 212px;
 }
 
-.tickets p {
-  width: 212px;
+.count-num {
+    width: 212px;
 }
 
 footer {
