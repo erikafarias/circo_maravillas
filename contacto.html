@@ -181,11 +181,11 @@
                       id="telefono"
                       placeholder="Escribe tu número de teléfono"
                       required
-                      pattern="[0-9]"
+                      pattern="^\d{10,}$"
                       class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                     />
                     <p class="error-message text-red-500 text-sm mt-1">
-                      Introduce un número de teléfono válido.
+                      El número debe tener al menos 10 dígitos.
                     </p>
                   </div>
                 </div>
@@ -213,6 +213,25 @@
                   Enviar consulta
                 </button>
               </form>
+
+              <div
+                id="modal-envio"
+                class="fixed inset-0 bg-opacity-50 flex items-center justify-center hidden"
+              >
+                <div
+                  class="bg-gray-900 p-8 rounded-lg shadow-lg max-w-sm w-full"
+                >
+                  <p class="mt-4 text-white">
+                    Tu consulta ha sido enviada exitosamente.
+                  </p>
+                  <button
+                    id="cerrar"
+                    class="mt-6 w-full bg-yellow-400 py-2 text-black font-semibold rounded-lg hover:bg-yellow-600 transition"
+                  >
+                    Cerrar
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
