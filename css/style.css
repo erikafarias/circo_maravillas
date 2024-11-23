@@ -396,6 +396,6 @@ label {
   }
 
   .img-contacto {
-    display: none;
+    display: none !important;
   }
 }
