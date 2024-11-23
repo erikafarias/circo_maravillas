@@ -1,116 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circo Maravillas</title>
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/espectaculos.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#8b5cf6',
-            secondary: '#ec4899',
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circo Maravillas</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/espectaculos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b5cf6",
+              secondary: "#ec4899",
+            },
           },
         },
-      },
-    };
-  </script>
-</head>
-<body>
-    <div class="max-w-screen-xl mx-auto flex flex-col min-h-screen">
+      };
+    </script>
+  </head>
+  <body>
+    <div class="w-full mx-auto flex flex-col min-h-screen">
       <header class="text-white">
-        <div class="container mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900">
-          <a href="./index.html" class="text-xl font-bold"> <img class="logo" src="./img/Maravilla_Cinzel_Translicent.png" alt="logo circo maravillas"></a>
+        <div
+          class="w-full mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900"
+        >
+          <a href="./index.html" class="text-xl font-bold">
+            <img
+              class="logo"
+              src="./img/Maravilla_Cinzel_Translicent.png"
+              alt="logo circo maravillas"
+          /></a>
           <nav>
-              <ul class="hidden md:flex space-x-16 mx-14">
-                <li><a href="./index.html" class="nav-item hover:underline">INICIO</a></li>
-                <li><a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a></li>
-                <li><a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a></li>
-                <li><a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a></li>
-                <li><a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a></li>
-              </ul>
-              <button id="menu-btn" class="block md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-            </nav>
-          </div>
-          <div id="menu" class="hidden md:hidden">
-            <ul class="flex flex-col space-y-4 p-4">
-              <li><a href="./index.html" class="nav-item hover:underline">INICIO</a></li>
-                <li><a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a></li>
-                <li><a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a></li>
-                <li><a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a></li>
-                <li><a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a></li>
+            <ul class="hidden md:flex space-x-16 mx-14">
+              <li>
+                <a href="./index.html" class="nav-item hover:underline"
+                  >INICIO</a
+                >
+              </li>
+              <li>
+                <a href="./espectaculos.html" class="nav-item hover:underline"
+                  >ESPECTÁCULOS</a
+                >
+              </li>
+              <li>
+                <a href="./funciones.html" class="nav-item hover:underline"
+                  >FUNCIONES</a
+                >
+              </li>
+              <li>
+                <a href="./entradas.html" class="nav-item hover:underline"
+                  >ENTRADAS</a
+                >
+              </li>
+              <li>
+                <a href="./nosotros.html" class="nav-item hover:underline"
+                  >NOSOTROS</a
+                >
+              </li>
             </ul>
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </nav>
+        </div>
+        <div id="menu" class="hidden md:hidden">
+          <ul class="flex flex-col space-y-4 p-4">
+            <li>
+              <a href="./index.html" class="nav-item hover:underline">INICIO</a>
+            </li>
+            <li>
+              <a href="./espectaculos.html" class="nav-item hover:underline"
+                >ESPECTÁCULOS</a
+              >
+            </li>
+            <li>
+              <a href="./funciones.html" class="nav-item hover:underline"
+                >FUNCIONES</a
+              >
+            </li>
+            <li>
+              <a href="./entradas.html" class="nav-item hover:underline"
+                >ENTRADAS</a
+              >
+            </li>
+            <li>
+              <a href="./nosotros.html" class="nav-item hover:underline"
+                >NOSOTROS</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="espectaculos-container">
+        <div class="item-1">
+          <div class="into">
+            <h1>CIRCO MARAVILLAS</h1>
+            <h1>Espectáculos</h1>
+            <p>
+              Nuestros espectáculos han sido específicamente creados para
+              cautivar a toda la audiencia. Cada presentación está diseñada para
+              involucrar los sentidos y transmitir emociones profundas,
+              ofreciendo una experiencia que combina la magia del circo
+              tradicional con elementos modernos y accesibles. Estos
+              espectáculos son aptos para todo tipo de público y están
+              preparados para hacer que cada persona se sienta parte de la
+              historia de nuestro Circo Marvillas.
+            </p>
           </div>
-        </header>
-        
-        <main class="espectaculos-container">
-          <div class="item-1">
-            <div class="into">
-              <h1>CIRCO MARAVILLAS</h1>
-              <h1>Espectáculos</h1>
-              <p>Nuestros espectáculos han sido específicamente creados para cautivar a toda la audiencia. Cada presentación está diseñada para involucrar los sentidos y transmitir emociones profundas, ofreciendo una experiencia que combina la magia del circo tradicional con elementos modernos y accesibles. Estos espectáculos son aptos para todo tipo de público y están preparados para hacer que cada persona se sienta parte de la historia de nuestro Circo Marvillas.</p>
+          <img src="./img/espectaculos-01.png" alt="Circus performance" />
+        </div>
+        <div class="item-2">
+          <img src="./img/espectaculos-02.png" alt="Fantasy" />
+          <div class="description right">
+            <p>Artistas prinicipales: Clara Solís y Emilio Rivas</p>
+            <p>
+              Descripción: Un sueño hecho realidad, donde la magia y la
+              imaginación cobran vida, llevándote a un mundo de ensueño. Esta
+              función transporta a la audiencia a un universo lleno de criaturas
+              fantásticas y paisajes oníricos. Interpretado por la encantadora
+              ilusionista Clara Solís y el excéntrico domador de sueños, Emilio
+              Rivas, FANTASY es un despliegue de trucos visuales, actos de
+              levitación y un ballet aéreo liderado por Sofia Blanco y los
+              Hermanos Vega, especialistas en cuerda floja y trapecio.
+            </p>
+            <div class="btn-container">
+              <a class="btn btn-yellow center" href="entradas.html"
+                >CONSEGUÍ TUS ENTRADAS</a
+              >
             </div>
-            <img src="./img/espectaculos-01.png" alt="Circus performance">
           </div>
-          <div class="item-2">
-              <img src="./img/espectaculos-02.png" alt="Fantasy">
-              <div class="description right">
-                <p>Artistas prinicipales: Clara Solís y Emilio Rivas</p>
-                <p>Descripción: Un sueño hecho realidad, donde la magia y la imaginación cobran vida, llevándote a un mundo de ensueño. Esta función transporta a la audiencia a un universo lleno de criaturas fantásticas y paisajes oníricos. Interpretado por la encantadora ilusionista Clara Solís y el excéntrico domador de sueños, Emilio Rivas, FANTASY es un despliegue de trucos visuales, actos de levitación y un ballet aéreo liderado por Sofia Blanco y los Hermanos Vega, especialistas en cuerda floja y trapecio.</p>
-                <div class="btn-container">
-                  <a class="btn btn-yellow center" href="entradas.html">CONSEGUÍ TUS ENTRADAS</a>
-                </div>
-              </div>
-          </div>
-          <div class="item-3">
-            <img src="./img/espectaculos-03.png" alt="Fire">
-            <div class="description left">
-              <p>Artistas prinicipales: Marco Sánchez, Valentina Duarte y Joaquín Torresh</p>
-              <p>Descripción: Una explosiva demostración de energía y destreza, llena de pirotecnia, ritmo y audacia. FIRE es un homenaje a la fuerza y el coraje humano, con una coreografía electrizante dirigida por Marco Sánchez, maestro de trucos con fuego y especialista en malabares pirotécnicos. Acompañándolo, están Valentina Duarte, acróbata de salto con fuego, y Joaquín Torres, experto en equilibrio y danza tribal. Este show promete mantener a los espectadores al borde de sus asientos.</p>
-              <div class="btn-container">
-                <a class="btn btn-yellow center" href="entradas.html">CONSEGUÍ TUS ENTRADAS</a>
-              </div>
+        </div>
+        <div class="item-3">
+          <img src="./img/espectaculos-03.png" alt="Fire" />
+          <div class="description left">
+            <p>
+              Artistas prinicipales: Marco Sánchez, Valentina Duarte y Joaquín
+              Torresh
+            </p>
+            <p>
+              Descripción: Una explosiva demostración de energía y destreza,
+              llena de pirotecnia, ritmo y audacia. FIRE es un homenaje a la
+              fuerza y el coraje humano, con una coreografía electrizante
+              dirigida por Marco Sánchez, maestro de trucos con fuego y
+              especialista en malabares pirotécnicos. Acompañándolo, están
+              Valentina Duarte, acróbata de salto con fuego, y Joaquín Torres,
+              experto en equilibrio y danza tribal. Este show promete mantener a
+              los espectadores al borde de sus asientos.
+            </p>
+            <div class="btn-container">
+              <a class="btn btn-yellow center" href="entradas.html"
+                >CONSEGUÍ TUS ENTRADAS</a
+              >
             </div>
           </div>
-          <div class="item-4">
-            <img src="./img/espectaculos-04.png" alt="Love Story">
-            <div class="description right">
-              <p>Artistas prinicipales: Alejandro Méndez y Lucía Rivera.</p>
-              <p>Descripción: Una historia que toca el corazón, un viaje que explora el amor en sus formas más puras y universales. En este espectáculo, los espectadores seguirán la aventura de dos jóvenes amantes, interpretados por el carismático acróbata Alejandro Méndez y la talentosa bailarina Lucía Rivera. La combinación de danza, acrobacias aéreas y música en vivo creará un ambiente de ensueño y emotividad.</p>
-              <div class="btn-container">
-                <a class="btn btn-yellow center" href="entradas.html">CONSEGUÍ TUS ENTRADAS</a>
-              </div>
+        </div>
+        <div class="item-4">
+          <img src="./img/espectaculos-04.png" alt="Love Story" />
+          <div class="description right">
+            <p>Artistas prinicipales: Alejandro Méndez y Lucía Rivera.</p>
+            <p>
+              Descripción: Una historia que toca el corazón, un viaje que
+              explora el amor en sus formas más puras y universales. En este
+              espectáculo, los espectadores seguirán la aventura de dos jóvenes
+              amantes, interpretados por el carismático acróbata Alejandro
+              Méndez y la talentosa bailarina Lucía Rivera. La combinación de
+              danza, acrobacias aéreas y música en vivo creará un ambiente de
+              ensueño y emotividad.
+            </p>
+            <div class="btn-container">
+              <a class="btn btn-yellow center" href="entradas.html"
+                >CONSEGUÍ TUS ENTRADAS</a
+              >
             </div>
           </div>
+        </div>
       </main>
 
       <footer class="text-white h-60">
         <div class="container mx-auto text-center">
           <div class="grid-container">
             <a href="./index.html" class="text-xl font-bold">
-                <img class="logo-footer w-28 ml-20 mt-10" src="./img/Maravilla_Cinzel_Translicent.png" alt="logo circo maravillas">
+              <img
+                class="logo-footer w-28 ml-20 mt-10"
+                src="./img/Maravilla_Cinzel_Translicent.png"
+                alt="logo circo maravillas"
+              />
             </a>
-            <p class="info-footer">Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939. Grupo 4 <img class="w-20" src="./img/uadelogo.png" alt="logo uade"></p>
+            <p class="info-footer">
+              Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939.
+              Grupo 4
+              <img class="w-20" src="./img/uadelogo.png" alt="logo uade" />
+            </p>
             <ul class="integrantes-lista">
-                <li><p>Integrantes:</p></li>
-                <li>Farias Erika Aldana</li>
-                <li>Palavecino Leonel Emiliano</li>
-                <li>Pereyra Damián Ezequiel</li>
-                <li>Saldaña Cecilia Irene</li>
+              <li><p>Integrantes:</p></li>
+              <li>Farias Erika Aldana</li>
+              <li>Palavecino Leonel Emiliano</li>
+              <li>Pereyra Damián Ezequiel</li>
+              <li>Saldaña Cecilia Irene</li>
             </ul>
-            <img class="img-footer" src="./img/footer-img.jpg" alt="footer imagen circo maravillas">
-        </div>
+            <img
+              class="img-footer"
+              src="./img/footer-img.jpg"
+              alt="footer imagen circo maravillas"
+            />
+          </div>
         </div>
       </footer>
     </div>
     <script src="./js/menu.js"></script>
-</body>
+  </body>
 </html>
