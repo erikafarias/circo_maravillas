@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circo Maravillas</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b5cf6",
+              secondary: "#ec4899",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div class="max-w-screen-xxl mx-auto flex flex-col min-h-screen">
+      <header class="text-white">
+        <div
+          class="container mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900"
+        >
+          <a href="./index.html" class="text-xl font-bold">
+            <img
+              class="logo"
+              src="./img/Maravilla_Cinzel_Translicent.png"
+              alt="logo circo maravillas"
+          /></a>
+          <nav>
+            <ul class="hidden md:flex space-x-16 mx-14">
+              <li>
+                <a href="./index.html" class="nav-item hover:underline"
+                  >INICIO</a
+                >
+              </li>
+              <li>
+                <a href="./espectaculos.html" class="nav-item hover:underline"
+                  >ESPECTÁCULOS</a
+                >
+              </li>
+              <li>
+                <a href="./funciones.html" class="nav-item hover:underline"
+                  >FUNCIONES</a
+                >
+              </li>
+              <li>
+                <a href="./entradas.html" class="nav-item hover:underline"
+                  >ENTRADAS</a
+                >
+              </li>
+              <li>
+                <a href="./nosotros.html" class="nav-item hover:underline"
+                  >NOSOTROS</a
+                >
+              </li>
+            </ul>
+            <button id="menu-btn" class="block md:hidden focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="3"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </nav>
+        </div>
+        <div id="menu" class="hidden md:hidden">
+          <ul class="flex flex-col space-y-4 p-4">
+            <li>
+              <a href="./index.html" class="nav-item hover:underline">INICIO</a>
+            </li>
+            <li>
+              <a href="./espectaculos.html" class="nav-item hover:underline"
+                >ESPECTÁCULOS</a
+              >
+            </li>
+            <li>
+              <a href="./funciones.html" class="nav-item hover:underline"
+                >FUNCIONES</a
+              >
+            </li>
+            <li>
+              <a href="./entradas.html" class="nav-item hover:underline"
+                >ENTRADAS</a
+              >
+            </li>
+            <li>
+              <a href="./nosotros.html" class="nav-item hover:underline"
+                >NOSOTROS</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main class="flex-grow pt-10">
+        <h2 class="text-center text-4xl font-bold mb-8">
+          Preguntas frecuentes
+        </h2>
+        <div class="contenedor-preguntas">
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>
+                ¿Cuáles son las medidas de accesibilidad con las que cuentan?
+              </p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                Las funciones que ofrece el Circo Maravillas incluyen tecnología
+                apropiada y personal capacitado para que los espectadores
+                disfruten y se lleven la mejor experiencia. Contamos con accesos
+                adaptados y además funciones distendidas para personas con
+                sensibilidades sensoriales, sin perder la magia del show.
+              </p>
+            </div>
+          </div>
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>
+                ¿Qué hace que los espectáculos sean inclusivos para personas con
+                discapacidades visuales y auditivas?
+              </p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                Ofrecemos herramientas de accesibilidad como subtítulos,
+                vibraciones, efectos visuales, audiodescripción, acceso táctil
+                al escenario, guías personalizadas y sonido envolvente. Nuestro
+                objetivo es garantizar que todos puedan disfrutar plenamente de
+                la experiencia sin importar sus capacidades.
+              </p>
+            </div>
+          </div>
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>
+                ¿Qué tipos de espectáculos ofrecen y para qué público están
+                diseñados?
+              </p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                Nuestros espectáculos LOVE STORY, FIRE y FANTASY están diseñados
+                para todos los públicos. Son experiencias multisensoriales que
+                combinan narrativas emocionantes con elementos visuales,
+                auditivos y táctiles para incluir a personas con discapacidades.
+              </p>
+            </div>
+          </div>
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>
+                ¿Dónde se realizan las funciones y cómo puedo encontrar la
+                ubicación?
+              </p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                Puedes encontrar nuestras localidades y horarios en la sección
+                <a class="enlace-parrafo" href="./funciones.html">Funciones</a>
+                de nuestra página web. Incluimos mapas y descripciones
+                detalladas para facilitar el acceso.
+              </p>
+            </div>
+          </div>
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>¿Cómo puedo comprar entradas para los espectáculos?</p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                Las entradas están disponibles en la sección
+                <a class="enlace-parrafo" href="./entradas.html">Entradas</a>.
+                Ofrecemos opciones de pago seguras y la posibilidad de elegir
+                asientos adaptados para tus necesidades específicas.
+              </p>
+            </div>
+          </div>
+          <div class="contenedor-pregunta">
+            <button class="boton-pregunta" onclick="toggle(this)">
+              <p>
+                ¿Las personas con movilidad reducida necesitan avisar
+                previamente para recibir apoyo especial?
+              </p>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="contenedor-respuesta">
+              <p>
+                No es necesario. Las entradas para personas con movilidad
+                reducida están identificadas como tal. En los accesos
+                señalizados podrán encontrar al staff que los guiarán hacia sus
+                lugares.
+              </p>
+            </div>
+          </div>
+          <p>
+            Si no encontrás la respuesta a tu pregunta, podés rellenar este
+            <a class="enlace-parrafo" href="./contacto.html"
+              >Formulario de contacto</a
+            >. Estamos comprometidos en garantizar una experiencia inclusiva y
+            cómoda para todos nuestros visitantes. ¡Esperamos verte pronto y
+            compartir contigo un momento mágico y accesible para todos!
+          </p>
+        </div>
+      </main>
+      <footer class="text-white h-60">
+        <div class="container mx-auto text-center">
+          <div class="grid-container">
+            <a href="./index.html" class="text-xl font-bold">
+              <img
+                class="logo-footer w-28 ml-20 mt-10"
+                src="./img/Maravilla_Cinzel_Translicent.png"
+                alt="logo circo maravillas"
+              />
+            </a>
+            <p class="info-footer">
+              Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939.
+              Grupo 4
+              <img class="w-20" src="./img/uadelogo.png" alt="logo uade" />
+            </p>
+            <ul class="integrantes-lista">
+              <li><p>Integrantes:</p></li>
+              <li>Farias Erika Aldana</li>
+              <li>Palavecino Leonel Emiliano</li>
+              <li>Pereyra Damián Ezequiel</li>
+              <li>Saldaña Cecilia Irene</li>
+            </ul>
+            <img
+              class="img-footer"
+              src="./img/footer-img.jpg"
+              alt="footer imagen circo maravillas"
+            />
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./js/menu.js"></script>
+    <script src="./js/preguntas.js"></script>
+  </body>
+</html>
