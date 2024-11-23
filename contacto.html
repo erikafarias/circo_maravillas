@@ -108,7 +108,7 @@
       <main class="flex-grow">
         <div class="max-w-screen-xxl mx-auto px-4 py-10">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            <div class="flex justify-center">
+            <div class="img-contacto flex justify-center">
               <img
                 src="./img/contacto.jpg"
                 alt="Artista con aro"
@@ -119,40 +119,96 @@
               <h2
                 class="text-center text-3xl font-bold tracking-wide uppercase mb-8"
               >
-                Contáctanos
+                Contactanos
               </h2>
 
-              <form class="bg-transparent">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <input
-                    type="text"
-                    placeholder="Nombre"
-                    class="p-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Apellido"
-                    class="p-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Correo electrónico"
-                    class="p-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Teléfono"
-                    class="p-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                  />
+              <form id="formulario-contacto" novalidate>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="nombre" class="block mb-2 text-sm font-medium"
+                      >Nombre</label
+                    >
+                    <input
+                      type="text"
+                      id="nombre"
+                      placeholder="Escribe tu nombre"
+                      required
+                      class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    />
+                    <p class="error-message text-red-500 text-sm mt-1">
+                      El nombre es obligatorio.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label for="apellido" class="block mb-2 text-sm font-medium"
+                      >Apellido</label
+                    >
+                    <input
+                      type="text"
+                      id="apellido"
+                      placeholder="Escribe tu apellido"
+                      required
+                      class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    />
+                    <p class="error-message text-red-500 text-sm mt-1">
+                      El apellido es obligatorio.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label for="correo" class="block mb-2 text-sm font-medium"
+                      >Correo Electrónico</label
+                    >
+                    <input
+                      type="email"
+                      id="correo"
+                      placeholder="Escribe tu correo electrónico"
+                      required
+                      class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    />
+                    <p class="error-message text-red-500 text-sm mt-1">
+                      Introduce un correo electrónico válido.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label for="telefono" class="block mb-2 text-sm font-medium"
+                      >Teléfono</label
+                    >
+                    <input
+                      type="tel"
+                      id="telefono"
+                      placeholder="Escribe tu número de teléfono"
+                      required
+                      pattern="[0-9]"
+                      class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                    />
+                    <p class="error-message text-red-500 text-sm mt-1">
+                      Introduce un número de teléfono válido.
+                    </p>
+                  </div>
                 </div>
-                <textarea
-                  placeholder="Mensaje"
-                  rows="5"
-                  class="w-full mt-4 p-3 bg-gray-800 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                ></textarea>
+
+                <div class="mt-4">
+                  <label for="mensaje" class="block mb-2 text-sm font-medium"
+                    >Mensaje</label
+                  >
+                  <textarea
+                    id="mensaje"
+                    placeholder="Escribe tu mensaje"
+                    required
+                    rows="4"
+                    class="w-full p-3 text-white rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  ></textarea>
+                  <p class="error-message text-red-500 text-sm mt-1">
+                    El mensaje no puede estar vacío.
+                  </p>
+                </div>
+
                 <button
                   type="submit"
-                  class="mt-4 w-full bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition"
+                  class="button-submit mt-6 w-full bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg hover:bg-yellow-600 transition"
                 >
                   Enviar consulta
                 </button>
@@ -193,5 +249,6 @@
       </footer>
     </div>
     <script src="./js/menu.js"></script>
+    <script src="./js/contacto.js"></script>
   </body>
 </html>
