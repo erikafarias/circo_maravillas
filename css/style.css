@@ -364,6 +364,11 @@ label {
   font-family: "Cardo", serif !important;
 }
 
+.youtube-video {
+  margin: auto;
+  padding-bottom: 50px;
+}
+
 @media (max-width: 600px) {
   .container {
     background-color: rgba(0, 0, 0, 0.16) !important;
@@ -393,6 +398,12 @@ label {
 
   iframe {
     width: 100%;
+  }
+
+  .youtube-video {
+    width: 100vw;
+    margin: auto;
+    padding-bottom: 50px;
   }
 
   .img-contacto {
