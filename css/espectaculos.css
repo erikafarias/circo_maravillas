@@ -1,0 +1,200 @@
+@import url("./colors.css");
+
+/* Base styles */
+.espectaculos-container {
+    display: grid; 
+    grid-gap: 1.875rem; 
+    margin: 0 auto; 
+    padding: 0; 
+    width: 100%;
+    max-width: 1280px;
+}
+
+.item-1 {
+    grid-row: 1;
+    padding: 2rem 11rem;
+}
+
+.item-1 .into > h1 {
+    font-family: 'Cinzel Decorative';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.688rem;
+    text-align: center;
+    color: var(--light);
+}
+
+.item-1 .into > p {
+    padding-block: 1rem 4rem;
+    text-align: center;
+}
+
+.item-2 {
+    grid-row: 2;
+}
+
+.item-3 {
+    grid-row: 3;
+}
+
+.item-4 {
+    grid-row: 4;
+}
+
+.item-2, .item-4 {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-3 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.item-2, .item-3, .item-4 {
+    margin-inline: 1rem;
+    padding: 1rem;
+    background-color: #172D6929;
+}
+
+.item-2 > img,
+.item-3 > img,
+.item-4 > img {
+    max-width: 24.188rem;
+    height: auto;
+}
+
+.description {
+    text-align: left;
+}
+
+.description.right {
+    margin-left: 6rem;
+}
+
+.description.left {
+    margin-right: 4rem;
+}
+
+.description p:first-child {
+    margin-top: 3rem;
+}
+
+.description > p {
+    font-family: 'Cardo';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.693rem;
+    color: var(--light);
+    margin-top: 2rem;
+    max-width: 45.375rem;
+}
+
+
+/* BUTTONS */
+.btn-container {
+    margin-block: 6rem 4rem;
+    position: relative;
+}
+
+.btn.center {
+    position: absolute; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    padding-block: 1.3rem;
+    box-shadow: 2px 4px 4px rgba(227, 185, 78, 0.25);
+    border-radius: .5rem;
+    width: 60%;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .espectaculos-container {
+        display: grid; 
+        grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)); 
+        grid-gap: 20px; 
+        align-items: start;
+        grid-gap: 1rem;
+    }
+    
+    .item-1 {
+        padding-inline: 2rem;
+        padding-block: 0;
+        max-height: 21rem;
+    }
+
+    .item-4 {
+        margin-bottom: 3rem;
+    }
+    .item-1 .into > h1 {
+        font-size: 1.25rem;
+        line-height: 1.685rem;
+    }
+
+    .item-1 .into > p {
+        padding-bottom: 0;
+    }
+
+    .item-1 > img { 
+        visibility: hidden;
+    }
+    
+    .item-2, .item-3, .item-4 { 
+        flex-direction: column; 
+        flex-wrap: wrap;
+        max-width: 22.5rem;
+        padding-inline: .5rem;
+    } 
+
+    .item-2 > img,
+    .item-3 > img,
+    .item-4 > img {
+        max-width: 100%;
+    }
+    
+    .description.right {
+        margin-left: 0;
+    }
+    
+    .description.left {
+        margin-right: 0;
+    }
+
+    .description > p {
+        font-size: 1rem;
+    }
+
+    .btn-container {
+        margin-block: 2rem .5rem;
+    }
+
+    .btn-container .btn {
+        white-space: normal; /* Allow text to wrap */ 
+        display: block; 
+        width: 60%; 
+        text-align: center;
+        padding: 1rem;
+        margin: auto;
+    }
+
+    .btn.center {
+        position: unset; 
+        transform: unset;
+    }
+}
+   
