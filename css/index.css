@@ -1,0 +1,111 @@
+:root {
+    --yellow: #E3B94E;
+    --dark-blue: #172D69;
+}
+/* Base styles */
+.home-container {
+    display: grid; 
+    grid-gap: 1.875rem; 
+    margin: 0 auto; 
+    padding: 0; 
+    width: 100%;
+    max-width: 1280px;
+}
+  
+/* Desktop layout */
+.hero {
+    grid-row: 1;
+    position: relative; 
+} 
+
+.hero > .title { 
+    position: absolute; 
+    bottom: 40%; 
+    background: rgba(11, 14, 21, 0.5); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    font-size: 4rem;
+    padding-block: 2.5rem;
+}
+
+.gallery {
+    grid-row: 2;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-gap: 20px;
+}
+
+.description {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    margin-block: 2rem 5rem;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.btn-container {
+    margin-block: 6rem 4rem;
+}
+
+.btn {
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    font-family: 'Cinzel';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: var(--dark-blue);
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+    .home-container {
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+    
+    .hero > .title { 
+        visibility: hidden;
+    }
+    
+    .description {
+        grid-row: 2;
+        width: 79%;
+        margin-block: 2rem;
+    }
+    
+    .description .btn-container {
+        margin-block: 5rem 1rem;
+    }
+
+    .description .btn-container .btn {
+        white-space: normal; /* Allow text to wrap */ 
+        display: block; 
+        width: 60%; 
+        text-align: center;
+        padding: 1rem;
+        margin: auto;
+    }
+
+    .gallery {
+        grid-row: 3;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        padding-inline: 2rem;
+    }
+
+    .gallery > img:nth-child(3) {
+        margin-bottom: 4rem;
+    }
+}
+  
