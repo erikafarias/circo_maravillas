@@ -24,6 +24,10 @@ p {
   font-family: "Cardo", serif;
 }
 
+main {
+  margin-bottom: 30px;
+}
+
 .contenedor-button {
   width: 100%;
   display: flex;
@@ -52,12 +56,12 @@ p {
   width: 70px;
 }
 
-.header-tickets{
-    height: 560px;
-    background-image: url("../img/header-entradas.jpg");
-    background-size: cover;
-    background-position: center;
-    margin-bottom: -50px;
+.header-tickets {
+  height: 560px;
+  background-image: url("../img/header-entradas.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: -50px;
 }
 
 .container {
@@ -162,6 +166,60 @@ h2 {
   background-color: #b02427;
 }
 
+.contenedor-preguntas {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-pregunta {
+  margin-bottom: 20px;
+}
+.boton-pregunta {
+  background: #ffffff;
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.boton-pregunta p {
+  margin: auto;
+  color: #172d69;
+  font-weight: bold;
+}
+
+.boton-pregunta i {
+  color: #172d69;
+}
+
+.contenedor-respuesta {
+  background: rgba(23, 45, 105, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 16px;
+  color: #ffffff;
+  display: none;
+}
+.enlace-parrafo {
+  color: #e3b94e;
+  text-decoration: none;
+}
+.boton-pregunta span:last-child {
+  transition: transform 0.3s ease;
+}
+.boton-pregunta.active span:last-child {
+  transform: rotate(180deg);
+}
+
 .tickets {
   font-size: 20px !important;
 }
@@ -214,22 +272,22 @@ h2 {
 }
 
 .count-num {
-    width: 212px;
+  width: 212px;
 }
 
 #cart-icon {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    background-color: #E3B94E;
-    color: #172D69;
-    padding: 1rem;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #e3b94e;
+  color: #172d69;
+  padding: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 footer {
@@ -273,7 +331,7 @@ footer ul {
 
 @media (max-width: 600px) {
   .container {
-   background-color: rgba(0, 0, 0, 0.16) !important;
+    background-color: rgba(0, 0, 0, 0.16) !important;
   }
 
   .grid-container {
