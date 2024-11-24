@@ -275,6 +275,10 @@ h2 {
   width: 212px;
 }
 
+.purchase-form {
+  color: #ffffff;
+}
+
 #cart-icon {
   position: fixed;
   bottom: 1rem;
@@ -354,10 +358,11 @@ footer ul {
   box-shadow: 2px 4px 4px 0px rgba(227, 185, 78, 0.25);
 }
 
-input,
-textarea {
+#formulario-contacto {
+  input, textarea{
   font-family: "Cardo", serif !important;
-  color: #172d69 !important;
+  color: #172d69;
+  }
 }
 
 label {

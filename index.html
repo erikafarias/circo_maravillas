@@ -26,7 +26,7 @@
   </head>
   <body>
     <div class="w-full mx-auto flex flex-col min-h-screen">
-      <header class="text-white">
+      <header class="text-white" role="banner">
         <div
           class="w-full mx-auto flex justify-between items-center p-4 bg-gradient-to-b from-gray-900"
         >
@@ -34,37 +34,28 @@
             <img
               class="logo"
               src="./img/Maravilla_Cinzel_Translicent.png"
-              alt="logo circo maravillas"
-          /></a>
-          <nav>
+              alt="Logo de Circo Maravillas"
+            />
+          </a>
+          <nav role="navigation" aria-label="Main Navigation">
             <ul class="hidden md:flex space-x-16 mx-14">
               <li>
-                <a href="./index.html" class="nav-item hover:underline"
-                  >INICIO</a
-                >
+                <a href="./index.html" class="nav-item hover:underline">INICIO</a>
               </li>
               <li>
-                <a href="./espectaculos.html" class="nav-item hover:underline"
-                  >ESPECTÁCULOS</a
-                >
+                <a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a>
               </li>
               <li>
-                <a href="./funciones.html" class="nav-item hover:underline"
-                  >FUNCIONES</a
-                >
+                <a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a>
               </li>
               <li>
-                <a href="./entradas.html" class="nav-item hover:underline"
-                  >ENTRADAS</a
-                >
+                <a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a>
               </li>
               <li>
-                <a href="./nosotros.html" class="nav-item hover:underline"
-                  >NOSOTROS</a
-                >
+                <a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a>
               </li>
             </ul>
-            <button id="menu-btn" class="block md:hidden focus:outline-none">
+            <button id="menu-btn" class="block md:hidden focus:outline-none" aria-expanded="false" aria-controls="menu">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -79,6 +70,7 @@
                   d="M4 6h16M4 12h16M4 18h16"
                 ></path>
               </svg>
+              <span class="sr-only">Toggle menu</span>
             </button>
           </nav>
         </div>
@@ -88,29 +80,21 @@
               <a href="./index.html" class="nav-item hover:underline">INICIO</a>
             </li>
             <li>
-              <a href="./espectaculos.html" class="nav-item hover:underline"
-                >ESPECTÁCULOS</a
-              >
+              <a href="./espectaculos.html" class="nav-item hover:underline">ESPECTÁCULOS</a>
             </li>
             <li>
-              <a href="./funciones.html" class="nav-item hover:underline"
-                >FUNCIONES</a
-              >
+              <a href="./funciones.html" class="nav-item hover:underline">FUNCIONES</a>
             </li>
             <li>
-              <a href="./entradas.html" class="nav-item hover:underline"
-                >ENTRADAS</a
-              >
+              <a href="./entradas.html" class="nav-item hover:underline">ENTRADAS</a>
             </li>
             <li>
-              <a href="./nosotros.html" class="nav-item hover:underline"
-                >NOSOTROS</a
-              >
+              <a href="./nosotros.html" class="nav-item hover:underline">NOSOTROS</a>
             </li>
           </ul>
         </div>
       </header>
-      <main class="home-container">
+      <main class="home-container" role="main">
         <div class="hero">
           <img src="./img/home-hero.png" alt="Circus performance" />
           <div class="title">
@@ -118,9 +102,9 @@
           </div>
         </div>
         <div class="gallery">
-          <img src="./img/home-01.png" alt="Juggler" />
-          <img src="./img/home-02.png" alt="High wire act" />
-          <img src="./img/home-03.png" alt="Aerial acrobats" />
+          <img src="./img/home-01.png" alt="Malavariasta haciendo malavares" />
+          <img src="./img/home-02.png" alt="truco de acrobatas en la cuerda floja" />
+          <img src="./img/home-03.png" alt="acrobatas en el aires con aros" />
         </div>
         <div class="description">
           <p>
@@ -132,9 +116,7 @@
             bienvenidos.
           </p>
           <div class="btn-container">
-            <a class="btn btn-yellow" href="entradas.html"
-              >CONSEGUÍ TUS ENTRADAS</a
-            >
+            <a class="btn btn-yellow" href="entradas.html">CONSEGUÍ TUS ENTRADAS</a>
           </div>
         </div>
         <div class="youtube-video">
@@ -151,20 +133,20 @@
           ></iframe>
         </div>
       </main>
-      <footer class="text-white h-60">
+      <footer class="text-white h-60" role="contentinfo">
         <div class="container mx-auto text-center">
           <div class="grid-container">
             <a href="./index.html" class="text-xl font-bold">
               <img
                 class="logo-footer w-28 ml-20 mt-10"
                 src="./img/Maravilla_Cinzel_Translicent.png"
-                alt="logo circo maravillas"
+                alt="Logo de Circo Maravillas"
               />
             </a>
             <p class="info-footer">
               Trabajo grupal- Materia Diseño y Desarrollo Web. Curso 480939.
               Grupo 4
-              <img class="w-20" src="./img/uadelogo.png" alt="logo uade" />
+              <img class="w-20" src="./img/uadelogo.png" alt="Logo de UADE" />
             </p>
             <ul class="integrantes-lista">
               <li><p>Integrantes:</p></li>
@@ -176,7 +158,7 @@
             <img
               class="img-footer"
               src="./img/footer-img.jpg"
-              alt="footer imagen circo maravillas"
+              alt="Imagen del footer de Circo Maravillas"
             />
           </div>
         </div>
