@@ -187,6 +187,10 @@ function populateLocationAndDateTime() {
     dateTimeSelect.addEventListener('change', checkFormCompletion);
     document.getElementById('seat').addEventListener('change', checkFormCompletion);
 
+    cartIcon.addEventListener('click', () => {
+        viewCartBtn.click(); 
+    });
+
     addCartBtn.addEventListener('click', () => {
         const location = locationSelect.value;
         const dateTime = dateTimeSelect.value;
@@ -357,6 +361,7 @@ function populateLocationAndDateTime() {
     confirmDeleteBtn.addEventListener('click', () => {
         deleteAnimationEl.innerHTML = '';
         deleteAnimationEl.classList.remove('hidden');
+        confirmDeleteBtn.setAttribute('disabled', true);
         lottie.loadAnimation({
             container: deleteAnimationEl,
             renderer: 'svg',
@@ -367,6 +372,7 @@ function populateLocationAndDateTime() {
             deleteAnimationEl.classList.add('hidden');
             removeCartItem(itemToDeleteIndex);
             confirmModal.classList.add('hidden');
+            confirmDeleteBtn.removeAttribute('disabled');
         });
     });
 
